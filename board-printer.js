@@ -43,3 +43,6 @@ export function checkIfNoMovesLeft(board) {
   }
   return true; // True if the loop doesn't find any "_"
 }
+
+const testNotFullBoard = ["X", "_", "O", "_", "X", "_", "_", "O", "O"];
+checkIfNoMovesLeft(testNotFullBoard);
