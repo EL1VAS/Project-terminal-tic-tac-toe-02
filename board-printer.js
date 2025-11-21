@@ -19,7 +19,7 @@ export function printBoard(board) {
   console.clear(); // Clears the console before each log
   console.log("\n****** TIC TAC TOE GAME******\n");
   console.log(`${board[0]} || ${board[1]} || ${board[2]}`); // Logs first row
-  console.log("===========");
+  console.log("^^^^^^^^^^^");
   console.log(`${board[3]} || ${board[4]} || ${board[5]}`); // Logs second row
   console.log("===========");
   console.log(`${board[6]} || ${board[7]} || ${board[8]}`); // Logs third row
