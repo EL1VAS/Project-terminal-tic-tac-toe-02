@@ -24,9 +24,9 @@ export function printBoard(board) {
   console.log("<<<<<<<<<<<");
   console.log(`${board[6]} || ${board[7]} || ${board[8]}`); // Logs third row
 }
-const testBoard = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
+let testBoard = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
 printBoard(testBoard);
-const testBoard = ["_", "_", "_", "_", "_", "_", "_", "_", "_"];
+let testBoard = ["_", "_", "_", "_", "_", "_", "_", "_", "_"];
 printBoard(testBoard);
 /*
     Given a tic-tac-toe board (an array of arrays),
