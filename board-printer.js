@@ -20,6 +20,9 @@ export function printBoard(board) {
   console.log("\n****** TIC TAC TOE GAME******\n");
   console.log(`${board[0]} || ${board[1]} || ${board[2]}`); // Logs first row
   console.log("===========");
+  console.log(`${board[3]} || ${board[4]} || ${board[5]}`); // Logs second row
+  console.log("===========");
+  console.log(`${board[6]} || ${board[7]} || ${board[8]}`); // Logs third row
 }
 const testBoard = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
 printBoard(testBoard);
