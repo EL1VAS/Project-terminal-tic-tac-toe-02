@@ -24,10 +24,10 @@ export function printBoard(board) {
   console.log("<<<<<<<<<<<");
   console.log(`${board[6]} || ${board[7]} || ${board[8]}`); // Logs third row
 }
-let testBoard = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
+const testBoard = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
 printBoard(testBoard);
-let testBoard = ["_", "_", "_", "_", "_", "_", "_", "_", "_"];
-printBoard(testBoard);
+const testTwoBoard = ["_", "_", "_", "_", "_", "_", "_", "_", "_"];
+printBoard(testTwoBoard);
 /*
     Given a tic-tac-toe board (an array of arrays),
         - return true if there are no moves left to make (there are no more '_' values)
