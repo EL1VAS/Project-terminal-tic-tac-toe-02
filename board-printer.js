@@ -33,4 +33,13 @@ printBoard(testTwoBoard);
         - return true if there are no moves left to make (there are no more '_' values)
         - return false if there are still moves that can be made
 */
-export function checkIfNoMovesLeft(board) {}
+export function checkIfNoMovesLeft(board) {
+  for (let i = 0; i < board.length; i++) {
+    // Checking each index of the board array
+    if (board[i] === "_") {
+      // If in the index there is a "_" it means we still got moves
+      return false; // So false on the statement "No moves left"
+    }
+  }
+  return true; // True if the loop doesn't find any "_"
+}
