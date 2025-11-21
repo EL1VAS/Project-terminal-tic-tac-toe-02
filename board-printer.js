@@ -16,6 +16,8 @@
     Test your function by calling it with an example tic-tac-toe board.
 */
 export function printBoard(board) {
+  console.clear(); // Clears the console before each log
+  console.log("\n****** TIC TAC TOE GAME******\n");
 }
 
 /*
@@ -23,5 +25,4 @@ export function printBoard(board) {
         - return true if there are no moves left to make (there are no more '_' values)
         - return false if there are still moves that can be made
 */
-export function checkIfNoMovesLeft(board) {
-}
+export function checkIfNoMovesLeft(board) {}
