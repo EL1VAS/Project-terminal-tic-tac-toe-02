@@ -18,6 +18,7 @@
 export function printBoard(board) {
   console.clear(); // Clears the console before each log
   console.log("\n****** TIC TAC TOE GAME******\n");
+  console.log(`${board[0]} || ${board[1]} || ${board[2]}`);
 }
 const testBoard = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
 printBoard(testBoard);
