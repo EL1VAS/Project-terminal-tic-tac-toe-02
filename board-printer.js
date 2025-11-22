@@ -46,3 +46,5 @@ export function checkIfNoMovesLeft(board) {
 
 const testNotFullBoard = ["X", "_", "O", "_", "X", "_", "_", "O", "O"];
 console.log(checkIfNoMovesLeft(testNotFullBoard));
+const testFullBoard = ["X", "X", "O", "X", "X", "O", "O", "O", "O"];
+console.log(checkIfNoMovesLeft(testFullBoard));
