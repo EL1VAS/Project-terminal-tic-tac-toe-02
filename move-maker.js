@@ -67,11 +67,13 @@ function validateMove(move, board) {
             - Return true
 */
 export function makeMove(board, move, player) {
+    // first - validate the move
     if (!validateMove(move, board)) {
         return false;
     }
-
+// if valid, extract row and col 
     const [row, col] = move.split(',').map(Number);
+    // update the board (convert to 0 based index)
     board[row -1][col - 1] = player;
     return true;
 }
