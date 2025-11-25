@@ -8,3 +8,12 @@ test("checkIfNoMovesLeft should return true if there are no moves left", () => {
   ];
   expect(checkIfNoMovesLeft(board)).toBe(true);
 });
+
+test('returns false if there are empty cells "_"', () => {
+  const board = [
+    ["_", "X", "O"],
+    ["O", "_", "X"],
+    ["X", "O", "O"],
+  ];
+  expect(checkIfNoMovesLeft(board)).toBe(false);
+});
