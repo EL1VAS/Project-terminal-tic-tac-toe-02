@@ -15,7 +15,42 @@
             ['O', 'O', 'X']
         ];
 */
+
+
 function validateMove(move, board) {
+    const possibleMoves = [[1,1], [1,2], [1,3], [2,1], [2,2], [2,3], [3,1], [3,2], [3,3]];
+// check if the move is a string with comma
+    if (typeof move !== 'string' || !move.includes(',')){
+        console.log('Try again');
+        return false;
+    }
+    const parts = move.split(',');
+
+// check if we have two parts
+    if(parts.length !== 2) {
+        console.log('Try again');
+        return false;
+    }
+// convert to numbers
+    const row = parseInt(parts[0]);
+    const col = parseInt(parts[1]);
+
+//check if numbers are valid
+    if(isNaN(row) || isNaN(col)) {
+        console.log('Try again');
+        return false;
+    }
+// check if move is within valid range (1-3)
+    const isValidPosition = possibleMoves.some(([r,c]) => r === row && c === col);
+    if (isValidPosition) {
+        console.log('Try again');
+        return false;
+    }
+// check if the position is empty (convert to 0 based index for array access)
+    if (board[row - 1][col -1] !== '__') {
+        cosole.log('Try again');
+        return false;
+    }
     // Implement this at the end if you have time, otherwise you can help your teammates!
     return true;
 }
