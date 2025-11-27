@@ -19,7 +19,7 @@ export function printBoard(board) {
   console.clear(); // Clears the console before each log
   console.log("\n****** TIC TAC TOE GAME******\n");
   for (let row = 0; row < board.length; row++) {
-    console.log(" " + board[row].join("||") + " ");
+    console.log("   " + board[row].join("||") + "   ");
     if (row < board.length - 1) {
       console.log("=============");
     }
