@@ -15,7 +15,41 @@
             ['O', 'O', 'X']
         ];
 */
+
+
 function validateMove(move, board) {
+    const possibleMoves = [[1,1], [1,2], [1,3], [2,1], [2,2], [2,3], [3,1], [3,2], [3,3]];
+// check if the move is a string 
+    if (typeof move !== 'string') {
+        console.log('Try again');
+        return false;
+    }
+    // split the move and check format
+    const parts = move.split(',');
+    if(parts.length !== 2) {
+        console.log('Try again');
+        return false;
+    }
+// convert to numbers
+    const row = parseInt(parts[0]);
+    const col = parseInt(parts[1]);
+
+//check if numbers are valid
+    if(isNaN(row) || isNaN(col)) {
+        console.log('Try again');
+        return false;
+    }
+// check if move is in possibleMoves
+    const isValidPosition = possibleMoves.some(([r,c]) => r === row && c === col);
+    if (!isValidPosition) {
+        console.log('Try again');
+        return false;
+    }
+// check if the position is empty (convert to 0 based index for array access)
+    if (board[row - 1][col -1] !== '_') {
+        console.log('Try again');
+        return false;
+    }
     // Implement this at the end if you have time, otherwise you can help your teammates!
     return true;
 }
@@ -32,5 +66,31 @@ function validateMove(move, board) {
             - Return true
 */
 export function makeMove(board, move, player) {
-    return false;
+    // first - validate the move
+    if (!validateMove(move, board)) {
+        return false;
+    }
+// if valid, extract row and col 
+    const [row, col] = move.split(',').map(Number);
+    // update the board (convert to 0 based index)
+    board[row -1] [col - 1] = player;
+    return true;
 }
+
+// tests
+
+let board = [
+    ['X', '_', '_'],
+    ['_', 'X', '_'],
+    ['O', 'O', 'X']
+];
+
+// Test valid moves
+console.log(makeMove(board, "1,2", 'O')); // true - valid move
+console.log(board); // Board updated with O at position (1,2)
+
+// Test invalid moves
+console.log(makeMove(board, "1,1", 'X')); // false - position already taken
+console.log(makeMove(board, "0,1", 'X')); // false - out of bounds
+console.log(makeMove(board, "2-1", 'X')); // false - invalid format
+console.log(makeMove(board, "1,4", 'X')); // false - out of bounds
